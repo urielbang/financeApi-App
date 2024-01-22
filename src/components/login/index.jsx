@@ -1,5 +1,6 @@
 import "./login.css";
-export default function Login() {
+import { Link } from "react-router-dom";
+export default function Login(props) {
   return (
     <div className="logInConainer">
       <div className="ring">
@@ -8,18 +9,28 @@ export default function Login() {
         <i className="lineStyle3"></i>
         <div className="login">
           <h2>Login</h2>
-          <div className="inputBx">
-            <input type="text" placeholder="Username" />
-          </div>
-          <div className="inputBx">
-            <input type="password" placeholder="Password" />
-          </div>
-          <div className="inputBx">
-            <input type="submit" value="Sign in" />
-          </div>
+          <form onSubmit={props.handleLogin} className="formContainer">
+            <div className="inputBx">
+              <input
+                onChange={props.handleChangeEmail}
+                type="text"
+                placeholder="Email"
+              />
+            </div>
+            <div className="inputBx">
+              <input
+                onChange={props.handleChangePassword}
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+            <div className="inputBx">
+              <input type="submit" value="Log in" />
+            </div>
+          </form>
           <div className="links">
             <a href="#">Forget Password</a>
-            <a href="#">Signup</a>
+            <Link to="/signin">sign in</Link>
           </div>
         </div>
       </div>

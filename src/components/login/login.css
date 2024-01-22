@@ -34,8 +34,9 @@
   animation: animate2 10s linear infinite;
 }
 .ring:hover i {
-  border: 6px solid var(--clr);
-  filter: drop-shadow(0 0 20px var(--clr));
+  border: 6px solid #1b4d3e;
+  filter: drop-shadow(0 0 20px aliceblue);
+  color: #1b4d3e;
 }
 @keyframes animate {
   0% {
@@ -70,6 +71,10 @@
 .login .inputBx {
   position: relative;
   width: 100%;
+  color: #1b4d3e;
+}
+.inputBx {
+  display: flex;
 }
 .login .inputBx input {
   position: relative;
@@ -79,14 +84,14 @@
   border: 2px solid #fff;
   border-radius: 40px;
   font-size: 1.2em;
-  color: #fff;
+  color: black;
   box-shadow: none;
   outline: none;
 }
 .login .inputBx input[type="submit"] {
-  width: 100%;
-  background: #0078ff;
-  background: linear-gradient(45deg, #ff357a, #fff172);
+  /* width: 100%; */
+
+  background: #1b4d3e;
   border: none;
   cursor: pointer;
 }
@@ -104,4 +109,13 @@
 .login .links a {
   color: #fff;
   text-decoration: none;
+}
+.lineStyle1 {
+  color: #00ff0a;
+}
+.lineStyle2 {
+  color: #ff0057;
+}
+.lineStyle3 {
+  color: #fffd44;
 }

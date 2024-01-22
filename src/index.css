@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  background: #11111139;
 }
 .iconBit {
   font-size: 5rem;
@@ -28,12 +29,24 @@ body {
   color: aliceblue;
   text-decoration: none;
 }
-.lineStyle1 {
-  color: #00ff0a;
+
+.containerCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
-.lineStyle2 {
-  color: #ff0057;
+.card {
+  background-color: #1b4d3ed4;
 }
-.lineStyle3 {
-  color: #fffd44;
+.containerCards h1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
