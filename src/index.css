@@ -33,15 +33,47 @@ body {
 
 .containerCards {
   display: flex;
+
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  background-color: #19181d;
+}
+.containerFsvorites {
+  display: flex;
+
+  height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #19181d;
 }
 .card {
-  background-color: #1b4d3ed4;
+  background-color: #1f1d23;
+  display: flex;
+  color: aliceblue;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  height: 38vh;
+  width: 18vw;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.iconCard {
+  background-color: #19181d;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 .containerCards h1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.containerFsvorites h1 {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -86,5 +118,23 @@ body {
   justify-content: center;
   align-self: self-start;
 
+  color: aliceblue;
+}
+.logAutbtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 8vw;
+  color: aliceblue;
+  justify-content: center;
+}
+.userLogedIcon {
+  font-size: 30px;
+}
+.logAutbtn div {
+  cursor: pointer;
+}
+.noUserIcon {
+  font-size: 30px;
   color: aliceblue;
 }

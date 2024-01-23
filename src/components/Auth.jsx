@@ -11,9 +11,6 @@ export default function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleClick = () => {
-    setIsLogin(!isLogin);
-  };
   const handleSignIn = (e) => {
     if (!email || !password) return;
     e.preventDefault();
@@ -50,6 +47,7 @@ export default function Auth() {
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
   };
+
   const handleChangePassword = (e) => setPassword(e.target.value);
   return (
     <div>

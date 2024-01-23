@@ -20,7 +20,7 @@ export default function HomPage() {
           </Link>
         </div>
         <div className="cardMainRight">
-          <img src={img} alt="" srcset="" />
+          <img src={img} alt="tfdf" />
         </div>
       </div>
     </div>
