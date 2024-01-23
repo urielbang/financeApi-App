@@ -1,6 +1,9 @@
 import "../login/login.css";
-import { Link } from "react-router-dom";
+
 export default function SignIn(props) {
+  const handleClick = () => {
+    props.setIsLogin(false);
+  };
   return (
     <div className="logInConainer">
       <div className="ring">
@@ -32,7 +35,9 @@ export default function SignIn(props) {
 
           <div className="links">
             <a href="#">Forget Password</a>
-            <Link to="/login">login</Link>
+            <p className="logInToggle" onClick={handleClick}>
+              Log in
+            </p>
           </div>
         </div>
       </div>

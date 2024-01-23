@@ -27,6 +27,8 @@ export default function Auth() {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
+    e.target[0].value = "";
+    e.target[1].value = "";
   };
   const handleLogin = (e) => {
     e.preventDefault();
@@ -42,20 +44,25 @@ export default function Auth() {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
+    e.target[0].value = "";
+    e.target[1].value = "";
   };
-  const handleChangeEmail = (e) => setEmail(e.target.value);
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
   const handleChangePassword = (e) => setPassword(e.target.value);
   return (
     <div>
-      <button onClick={handleClick}>click</button>
       {!isLogin ? (
         <Login
+          setIsLogin={setIsLogin}
           handleLogin={handleLogin}
           handleChangeEmail={handleChangeEmail}
           handleChangePassword={handleChangePassword}
         />
       ) : (
         <SignIn
+          setIsLogin={setIsLogin}
           handleChangeEmail={handleChangeEmail}
           handleChangePassword={handleChangePassword}
           handleSignIn={handleSignIn}

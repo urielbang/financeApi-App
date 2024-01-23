@@ -11,6 +11,7 @@ body {
 .navBar {
   display: flex;
 
+  height: 13vh;
   justify-content: space-between;
   background-color: #1b4d3e;
   align-items: center;
@@ -49,4 +50,41 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.HomePage {
+  background-color: #144c41;
+  display: flex;
+  height: 87vh;
+}
+.cardMainHomePage {
+  display: flex;
+  justify-content: space-around;
+  font-family: "Playfair Display", serif;
+  color: aliceblue;
+  width: 100%;
+}
+.cardMainRight {
+  display: flex;
+}
+.cardMainLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.textHeaderMain {
+  font-size: 80px;
+  margin: 0;
+}
+.openAccoutn {
+  text-decoration: none;
+  font-family: sans-serif;
+  background-color: rgba(0, 0, 0, 0.56);
+  padding: 1rem;
+  /* width: 9vw; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-self: self-start;
+
+  color: aliceblue;
 }

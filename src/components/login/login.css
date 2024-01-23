@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #11111139;
+
   width: 100%;
   overflow: hidden;
 }
@@ -118,4 +118,9 @@
 }
 .lineStyle3 {
   color: #fffd44;
+}
+
+.logInToggle {
+  color: aliceblue;
+  cursor: pointer;
 }

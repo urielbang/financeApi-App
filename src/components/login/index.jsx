@@ -1,6 +1,9 @@
 import "./login.css";
-import { Link } from "react-router-dom";
+
 export default function Login(props) {
+  const handleClaik = () => {
+    props.setIsLogin(true);
+  };
   return (
     <div className="logInConainer">
       <div className="ring">
@@ -30,7 +33,9 @@ export default function Login(props) {
           </form>
           <div className="links">
             <a href="#">Forget Password</a>
-            <Link to="/signin">sign in</Link>
+            <p className="logInToggle" onClick={handleClaik}>
+              Sign in
+            </p>
           </div>
         </div>
       </div>
