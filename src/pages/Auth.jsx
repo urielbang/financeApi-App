@@ -1,5 +1,5 @@
-import Login from "./login/index";
-import SignIn from "./Sign in/index";
+import Login from "../components/login/index";
+import SignIn from "../components/Sign in/index";
 import { useState } from "react";
 import {
   createUserWithEmailAndPassword,

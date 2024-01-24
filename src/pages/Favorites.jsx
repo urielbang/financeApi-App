@@ -1,4 +1,4 @@
-import CarsAssest from "./CardAssest";
+import CarsAssest from "../components/CardAssest";
 import { getAuth } from "firebase/auth";
 import { db } from "../firebase";
 import { useEffect, useState } from "react";
@@ -11,7 +11,7 @@ export default function Favorites() {
   useEffect(() => {
     if (user) {
       onSnapshot(
-        collection(db, `${user.email}`),
+        collection(db, `favorites`),
         (snapshot) => {
           setCurrentUserData(
             snapshot.docs.map((doc) => {
@@ -24,8 +24,12 @@ export default function Favorites() {
     }
   }, []);
 
-  const renderCardsFavorites = currentUserData.map((card) => {
-    return <CarsAssest key={card.rank} assest={card} />;
+  const renderDataOfCorrentUser = currentUserData.filter((card) => {
+    return card.userId === user.uid;
+  });
+
+  const renderCardsFavorites = renderDataOfCorrentUser.map((card) => {
+    return <CarsAssest key={card.rank} assest={card} ifButton={true} />;
   });
 
   return (

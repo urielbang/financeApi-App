@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import CarsAssest from "./CardAssest";
+import CarsAssest from "../components/CardAssest";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import { db } from "../firebase";
 import { collection, onSnapshot, addDoc } from "firebase/firestore";
@@ -22,9 +22,9 @@ export default function Assest() {
   //! set data currect card clicked
   const handleHeartClik = async (heart) => {
     if (user) {
-      const collctionRef = collection(db, `${user.email}`);
+      const collctionRef = collection(db, `favorites`);
 
-      await addDoc(collctionRef, heart);
+      await addDoc(collctionRef, { ...heart, userId: user.uid });
     }
   };
 

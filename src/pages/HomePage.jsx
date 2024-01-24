@@ -16,7 +16,7 @@ export default function HomPage() {
           </p>
           <Link className="openAccoutn" to={"/auth"}>
             OPEN AN ACCOUNT
-            <IoIosArrowForward />
+            <IoIosArrowForward className="iconArow" />
           </Link>
         </div>
         <div className="cardMainRight">

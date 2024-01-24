@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaBitcoin } from "react-icons/fa";
 import { useEffect, useState } from "react";
+
 import { FiUserX, FiUserCheck } from "react-icons/fi";
 
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
@@ -9,6 +10,7 @@ export default function NavBar() {
   const [isLogIn, setIsLogIn] = useState(false);
   const [closeUser, setCloseUser] = useState(false);
   const auth = getAuth();
+  const user = auth.currentUser;
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -41,7 +43,7 @@ export default function NavBar() {
       <FaBitcoin className="iconBit" />
       <ul className="listNavBar">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </li>
         <li>
           <Link to="/assest">Assest</Link>
@@ -60,7 +62,13 @@ export default function NavBar() {
           ) : (
             <div className="logAutbtn">
               <FiUserCheck className="userLogedIcon" onClick={handleClick} />
-              {closeUser ? <div onClick={handleLogOut}>Log out</div> : ""}
+              {closeUser ? (
+                <Link to={"/"} onClick={handleLogOut}>
+                  Log out
+                </Link>
+              ) : (
+                ""
+              )}
             </div>
           )}
         </li>
