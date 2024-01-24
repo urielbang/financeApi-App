@@ -10,7 +10,7 @@ export default function NavBar() {
   const [isLogIn, setIsLogIn] = useState(false);
   const [closeUser, setCloseUser] = useState(false);
   const auth = getAuth();
-  const user = auth.currentUser;
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

@@ -1,14 +1,12 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import CarsAssest from "../components/CardAssest";
-import { onAuthStateChanged, getAuth } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { db } from "../firebase";
-import { collection, onSnapshot, addDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 export default function Assest() {
   const [assestData, setAssetData] = useState([]);
-
-  const [currentUserdata, setCurrentUserData] = useState([]);
 
   const auth = getAuth();
   const user = auth.currentUser;
@@ -27,28 +25,6 @@ export default function Assest() {
       await addDoc(collctionRef, { ...heart, userId: user.uid });
     }
   };
-
-  //! get data current user
-  useEffect(() => {
-    //!check if user log in
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log(user.email);
-        //!getData from fire base
-        onSnapshot(
-          collection(db, `${user.email}`),
-          (snapshot) => {
-            setCurrentUserData(
-              snapshot.docs.map((doc) => {
-                return doc.data();
-              })
-            );
-          },
-          []
-        );
-      }
-    });
-  }, []);
 
   const renderCards = assestData.map((asset, index) => {
     return (

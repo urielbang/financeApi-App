@@ -13,7 +13,7 @@ export default function DataPage() {
     const data = await res.data;
     setFetchData(data.data[id]);
   };
-  console.log(fetchData);
+
   useEffect(() => {
     fetchAssesApi();
   }, []);
