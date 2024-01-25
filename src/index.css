@@ -43,7 +43,8 @@ body {
 .containerFsvorites {
   display: flex;
 
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100%;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
@@ -196,4 +197,13 @@ body {
 
 .button-68:hover {
   box-shadow: rgba(39, 174, 96, 0.2) 0 6px 12px;
+}
+.heartIcon {
+  font-size: 2rem;
+
+  margin: 0;
+}
+.heartIcon:hover {
+  color: rgb(188, 16, 16);
+  cursor: pointer;
 }

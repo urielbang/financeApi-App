@@ -1,6 +1,7 @@
 import { BsCurrencyBitcoin } from "react-icons/bs";
 import { LuArrowDownToLine } from "react-icons/lu";
-import { GoHeart } from "react-icons/go";
+import { IoIosHeart } from "react-icons/io";
+
 import { Link } from "react-router-dom";
 import { db } from "../firebase";
 import {
@@ -44,12 +45,21 @@ export default function CarsAssest(props) {
         <LuArrowDownToLine />
         {props.assest.changePercent24Hr} per hour
       </span>
-      <GoHeart
-        onClick={() => {
-          props.handleHeartClik(props.assest);
-        }}
-      />
-      <Link to={`/datas/${props.id}`}>read more</Link>
+      {!props.ifButton && !props.dinamic ? (
+        <IoIosHeart
+          className="heartIcon"
+          onClick={() => {
+            props.handleHeartClik(props.assest);
+          }}
+        />
+      ) : (
+        ""
+      )}
+      {!props.dinamic ? (
+        <Link to={`/datas/${props.assest.rank}`}>read more</Link>
+      ) : (
+        ""
+      )}
       {props.ifButton ? (
         <button
           className="button-68"

@@ -11,7 +11,12 @@ export default function DataPage() {
   const fetchAssesApi = async () => {
     const res = await axios.get(`https://api.coincap.io/v2/assets`);
     const data = await res.data;
-    setFetchData(data.data[id]);
+
+    const correntObj = data.data.find((card) => {
+      return card.rank === id;
+    });
+
+    setFetchData(correntObj);
   };
 
   useEffect(() => {
@@ -21,7 +26,7 @@ export default function DataPage() {
   return (
     <div className="containerFsvorites">
       <h1>Blog Details </h1>
-      {<CarsAssest assest={fetchData} />}
+      {<CarsAssest assest={fetchData} dinamic={true} />}
     </div>
   );
 }
