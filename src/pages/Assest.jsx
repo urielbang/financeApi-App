@@ -14,6 +14,7 @@ export default function Assest() {
   const fetchAssesApi = async () => {
     const res = await axios.get(`https://api.coincap.io/v2/assets`);
     const data = await res.data;
+    console.log(data.data);
     setAssetData(data.data);
   };
 

@@ -22,14 +22,14 @@ export default function Favorites() {
         []
       );
     }
-  }, []);
+  }, [user]);
 
   const renderDataOfCorrentUser = currentUserData.filter((card) => {
     return card.userId === user.uid;
   });
 
-  const renderCardsFavorites = renderDataOfCorrentUser.map((card) => {
-    return <CarsAssest key={card.rank} assest={card} ifButton={true} />;
+  const renderCardsFavorites = renderDataOfCorrentUser.map((card, index) => {
+    return <CarsAssest key={index} assest={card} ifButton={true} />;
   });
 
   return (
