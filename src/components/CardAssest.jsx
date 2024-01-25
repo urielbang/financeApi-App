@@ -40,10 +40,12 @@ export default function CarsAssest(props) {
         <BsCurrencyBitcoin />
       </div>
       <span>{props.assest.name}</span>
-      <p>{props.assest.priceUsd}</p>
-      <span>
+      <p className="plusNumberCard">
+        price Usd: {Number(props.assest.priceUsd).toFixed(3)}
+      </p>
+      <span className="minusNumberCard">
         <LuArrowDownToLine />
-        {props.assest.changePercent24Hr} per hour
+        {Number(props.assest.changePercent24Hr).toFixed(6)} per hour
       </span>
       {!props.ifButton && !props.dinamic ? (
         <IoIosHeart

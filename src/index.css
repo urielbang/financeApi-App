@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #11111139;
+  background-color: #19181d;
 }
 .iconBit {
   font-size: 5rem;
@@ -35,26 +35,35 @@ body {
   display: flex;
 
   flex-direction: row;
+  margin-left: 3rem;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  background-color: #19181d;
+}
+.containerCards h1 {
+  font-family: "Playfair Display", serif;
+  text-decoration: underline;
+  color: #144c41;
+  font-size: 4rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 .containerFsvorites {
   display: flex;
 
-  min-height: 100vh;
-  max-height: 100%;
   flex-direction: row;
+  margin-left: 3rem;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  background-color: #19181d;
 }
+
 .card {
   background-color: #1f1d23;
   display: flex;
   color: aliceblue;
+
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -64,17 +73,23 @@ body {
   border-radius: 2rem;
   overflow: hidden;
 }
+.card a {
+  text-decoration: none;
+
+  color: #144c41;
+}
 .iconCard {
   background-color: #19181d;
   padding: 1rem;
+  color: #144c41;
   border-radius: 1rem;
 }
-.containerCards h1 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
+
 .containerFsvorites h1 {
+  font-family: "Playfair Display", serif;
+  text-decoration: underline;
+  color: #144c41;
+  font-size: 4rem;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -206,4 +221,19 @@ body {
 .heartIcon:hover {
   color: rgb(188, 16, 16);
   cursor: pointer;
+}
+.containerBtnAssest {
+  display: flex;
+  justify-content: center;
+  margin: 3rem;
+}
+.minusNumberCard {
+  font-size: 0.8rem;
+  color: rgb(161, 11, 11);
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+}
+.plusNumberCard {
+  color: #1e8449;
 }

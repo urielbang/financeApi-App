@@ -34,7 +34,7 @@ export default function Favorites() {
 
   return (
     <div className="containerFsvorites">
-      <h1>Your Favorite</h1>
+      <h1>Your Favorites:</h1>
 
       {renderCardsFavorites}
     </div>

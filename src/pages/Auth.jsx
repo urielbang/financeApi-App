@@ -50,7 +50,7 @@ export default function Auth() {
 
   const handleChangePassword = (e) => setPassword(e.target.value);
   return (
-    <div>
+    <div className="logInSignInConatiner">
       {!isLogin ? (
         <Login
           setIsLogin={setIsLogin}
