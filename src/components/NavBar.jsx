@@ -9,6 +9,7 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 export default function NavBar() {
   const [isLogIn, setIsLogIn] = useState(false);
   const [closeUser, setCloseUser] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const auth = getAuth();
 
   useEffect(() => {
@@ -24,6 +25,20 @@ export default function NavBar() {
         setIsLogIn(false);
       }
     });
+
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   const handleClick = () => {
     setCloseUser(!closeUser);
@@ -39,9 +54,9 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="navBar">
+    <nav className={scrolled ? "navBar scrolled" : "navBar"}>
       <FaBitcoin className="iconBit" />
-      <ul className="listNavBar">
+      <ul className="listNavBar navbar-content">
         <li>
           <Link to="/home">Home</Link>
         </li>
