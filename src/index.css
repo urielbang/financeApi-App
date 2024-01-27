@@ -8,11 +8,15 @@ body {
 
   color: aliceblue;
 }
+.userLogedIcon {
+  cursor: pointer;
+}
 .navBar {
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
+
   align-items: center;
   padding: 0.5rem;
   justify-content: space-between;
@@ -33,6 +37,22 @@ body {
 .listNavBar a {
   color: aliceblue;
   text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: 0.15s ease-in-out;
+  position: relative;
+}
+.menuBar {
+  display: none;
+  color: aliceblue;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.open-menu {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
 }
 
 .containerCards {
@@ -241,4 +261,65 @@ body {
 }
 .plusNumberCard {
   color: #1e8449;
+}
+@media only screen and (max-width: 600px) {
+  .listNavBar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .menuBar {
+    display: block;
+  }
+  .dontShowNav {
+    display: none;
+  }
+  .HomePage {
+    width: 100vw;
+  }
+  .cardMainRight {
+    width: 50%;
+    height: 100%;
+  }
+  .picHomePage {
+    width: 100%;
+    height: 100%;
+  }
+  .cardMainLeft {
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+  }
+  .cardMainLeft .textHeaderMain {
+    font-size: 2rem;
+  }
+  .card {
+    width: 35vw;
+    text-align: center;
+  }
+  .containerCards {
+    margin-left: 0;
+  }
+  .containerCards h1 {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+  .containerFsvorites {
+    margin-left: 0;
+  }
+  .containerFsvorites h1 {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+  .button-68 {
+    font-size: 0.5rem;
+  }
 }

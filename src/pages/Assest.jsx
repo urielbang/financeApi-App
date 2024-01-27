@@ -55,7 +55,7 @@ export default function Assest() {
   return (
     <>
       <div className="containerCards">
-        <h1>{currentMonthAndYear}</h1>
+        <h1 className="headerDateAssest">{currentMonthAndYear}</h1>
         {renderCards}
       </div>
       <div className="containerBtnAssest">

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaBitcoin } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { FaBars } from "react-icons/fa";
 
 import { FiUserX, FiUserCheck } from "react-icons/fi";
 
@@ -10,6 +11,7 @@ export default function NavBar() {
   const [isLogIn, setIsLogIn] = useState(false);
   const [closeUser, setCloseUser] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [toggleNavBar, setToggleNavBar] = useState(false);
   const auth = getAuth();
 
   useEffect(() => {
@@ -53,13 +55,18 @@ export default function NavBar() {
       });
   };
 
+  const handleHamburgerClick = () => {
+    setToggleNavBar(!toggleNavBar);
+  };
+
   return (
     <nav className={scrolled ? "navBar scrolled" : "navBar"}>
       <FaBitcoin className="iconBit" />
-      <ul className="listNavBar navbar-content">
+      <ul className={`listNavBar ${!toggleNavBar ? "dontShowNav" : ""}`}>
         <li>
           <Link to="/home">Home</Link>
         </li>
+
         <li>
           <Link to="/assest">Assest</Link>
         </li>
@@ -88,6 +95,9 @@ export default function NavBar() {
           )}
         </li>
       </ul>
+      <label htmlFor="check" className="open-menu">
+        <FaBars onClick={handleHamburgerClick} className="menuBar" />
+      </label>
     </nav>
   );
 }

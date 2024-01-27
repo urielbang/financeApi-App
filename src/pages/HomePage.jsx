@@ -20,7 +20,7 @@ export default function HomPage() {
           </Link>
         </div>
         <div className="cardMainRight">
-          <img src={img} alt="tfdf" />
+          <img className="picHomePage" src={img} alt="tfdf" />
         </div>
       </div>
     </div>
